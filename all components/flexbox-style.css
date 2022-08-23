@@ -1,0 +1,56 @@
+*{
+      box-sizing: border-box;
+}
+.flex-container{
+      display: flex;
+      background-color: aqua;
+      /* height:  60vh; */
+      
+      /* flex-direction   จัดเรียงลำดับ กำหนดทิศทาง item      */
+      flex-direction: row;  /*เรียงจากซ้าย ไปขวา หรือ เรียงปกติ*/
+      flex-direction: row-reverse;  /* ชิดด้านขวา เรียงจากขวา ไปซ้าย หรือ เรียงกลับด้าน*/ 
+      flex-direction: column ;   /* เรียงจากบน ลงล่าง หรือ เรียงปกตื*/
+      flex-direction: column-reverse;  /* เรียงจากล่าง ขึ้นบน หรือ เรียงกลับด้าน */
+
+      /* flex-wrap เรียง item และปัดส่วนเกิน  */
+      flex-wrap: nowrap ; /*ค่าปกติ*/
+      flex-wrap: wrap;  /* เรียงจากบน ลงล่าง ส่วนที่เกิน จะปัดลง */
+      flex-wrap: wrap-reverse;  /*  เรียงจากล่าง ขึ้นบน ส่วนที่เกิน จะปัดขึ้น */ 
+      
+      /*    Flex Justify จัดวางตำแหน่ง item แนวนอน  */
+      justify-content: flex-start;  /*    ซิดซ้าย */
+      justify-content: center;   /*  กลึ่งกลาง  */
+      justify-content: flex-end;  /*  ซิดขวา  */
+      justify-content: space-around;  /*  ระยะห่างซ้ายขวาและขนาด item เท่ากัน  */
+      justify-content: space-between;  /*  ระยะห่างซ่ายขวาและขนาด item เท่ากัน  (ติดมุม)  */
+     
+      /*  Flex Alignment  จัดเรียงตำแหน่ง item แนวตั้ง  ระดับแนวตั้ง แต่เนื้อหาแนวนอน */
+      align-items: stretch;  /*  ขนาดความสูง item เท่ากับ container  */
+      align-items: flex-start;  /*  ชิดด้านบน  */
+      align-items: center;  /*  อยู่กึ่งกลาง  */
+      align-items: flex-end;  /*  ชิดด่านล่าง  */
+}
+.item{
+      background: orange;
+      border: 1px solid black;
+      width: 200px;
+      margin:10px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+      flex:1;  /* เรียงทุกกล่องให้เท่ากันหมด ไม่มีช่องว่างส่วนเกิน */
+}
+.item-11{
+
+      /*  flex-properties (item)  ความยืดหยุ่น หด ขยาย item  */
+      flex-basis: 200px;  /* กำหนดค่าความยิดหยุ่นเริ่มต้น หรือ ขนาดเริ่มต้น หน่วยเป็น px*/
+      flex-shrink: 3;  /*  ให้ item หดตัวเป็นกี่เท่าของ item อื่น เริ่มต้น 1 เท่า */
+      flex-grow: 3;  /*  ให้ item ขยายตัวเป็นกี่เท่าของ item อื่น เริ่มต้น 0 เท่า */
+      flex:1; /*  ให้ item ใหญ่เป็นกี่เท่าของ item อื่น เริ่มต้น 2 เท่า */
+
+      /* Flex Alignment-Self  จัดวางตำแหน่ง item แนวตั้ง เฉพาะ อันที่เลือก */
+      align-self: stretch;  /*  ขนาดความสูง item เท่ากับ container  */
+      align-self: flex-start;  /*  ชิดด้านบน  */
+      align-self: center;  /*  อยู่กึ่งกลาง  */
+      align-self: flex-end;  /*  ชิดด้านล่าง  */
+}
