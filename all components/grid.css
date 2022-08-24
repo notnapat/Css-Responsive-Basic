@@ -1,0 +1,55 @@
+.grid-container{
+      display: grid;
+
+      /* สร้าง item  กำหนด จำนวน และความสูง แถวแนวนอน โดยใช้หน่วย "fr"=ให้ขนาด แต่ละ item เป็นกี่ส่วนของพื้นที่   item ทั้งหมด ใช้ทำ responsive แทน หน่วย "px" */
+       grid-template-rows: 1fr 2fr 3fr;  
+       grid-template-rows:  repeat(3,1fr); 
+       
+       
+      /* สร้าง item  กำหนด จำนวน และความกว้าง แถวแนวตั้ง โดยใช้หน่วย "fr"=ให้ขนาด แต่ละ item เป็นกี่ส่วนของพื้นที่  item ทั้งหมด ใช้ทำ responsive แทน หน่วย "px" */
+       grid-template-columns: 1fr 5fr 2fr; 
+       grid-template-columns:  repeat(3,1fr); 
+
+       /* กำหนด ระยะห่างของ item  แถวบน ล่าง */
+       grid-row-gap: 10px;
+
+       /* กำหนด ระยะห่างของ item  แถวซ้าย ขวา */
+       grid-column-gap: 20px;
+
+}     
+.aaa{
+       /* สร้าง item กำหนด จำนวน และความสูง แถวแนวนอน */
+      grid-template-rows: 100px 200px auto; /*  เขียนเต็มรูป  */
+      grid-template-rows:  repeat(3,auto);  /*   เขียนลดรูป  */
+
+      /* สร้าง item กำหนด จำนวน และความกว้าง แถวแนวตั้ง */
+      grid-template-columns: 100px auto 300px;  /*  เขียนเต็มรูป  */
+      grid-template-columns: repeat(3,200px);   /*  เขียนลดรูป   */
+}
+
+.item{
+      padding: 3rem;
+      border: 1px solid #ccc;
+      background: orange;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+}
+.item:first-chil{
+
+      /* ขยายพื้นที่  item ลงมา ตามเส้นกริด ที่ระบุ จากเส้นเริ่มถึง เส้นสิ้นสุด  */
+      grid-row-start:  1;
+      grid-row-end:  3;
+      grid-row:1/4;        
+
+      /* ขยายพื้นที่  item ออกด้านข้าง ตามเส้นกริด ที่ระบุ จากเส้นเริ่มถึง เส้นสิ้นสุด  */
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-column:2/3;
+
+      /* ขยายพื้นที่  item ลงมา ตามจำนวน item ที่ระบุ  */
+      grid-row: 2/span 2; 
+      
+      /* ขยายพื้นที่  item ออกด้านข้าง ตามจำนวน item ที่ระบุ  */
+      grid-column: 2/span 3;
+}
