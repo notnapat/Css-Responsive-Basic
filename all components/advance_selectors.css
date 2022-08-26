@@ -1,0 +1,133 @@
+/* ////////////////////////// Targeted Selector ใช้ style ตามแท็ก ลูก_______________________________________________________________ */
+p{
+      background-color: orange;
+}
+/* descendant selector  เปลี่ยนสีแท็ก p ทั้งหมด ที่อยู่ใน แท็ก div */
+div p{
+      background-color: green;
+}
+/* child selector เปลี่ยนสีแท็ก p ที่เป็นลูก div นี้เท่านั้น */
+div>p{
+      background-color: yellow;
+}
+
+/*////////////////////////// Style By Attribute ใช้  style ผ่านคุณสมบัติในแท็ก______________________________________________________________________ */
+a{
+      background-color: orange;
+}
+a[target]{
+      background-color: red;
+      color: white;
+}
+a[target='_blank']{
+      background-color: black;
+      color: pink;
+}
+a[target="_self"]{
+      color: purple;
+}
+
+/* ///////////////////////////// Special Attribute เพิ่ม style ผ่านแท็ก เดียวกัน แต่คุณสมบัติ ต่างกัน ให้เหมือนกันใน 1 style________________________________________ */
+input[type="email"]  ,  input[type="text"]{
+      width:80%;
+      margin-bottom: 5px;
+      background-color: green;
+}
+input[type="submit"]{
+      color: white;
+      background-color: red;
+      border-radius: 10px;
+}
+
+/* /////////////////////////// Pseudo Selectors  ใช้ style ผ่านลูกคนทีเท่าไรก็ได้ ตามที่ระบุ หรือ นับทุกๆกี่ช่อง หรือ นับแค่ช่องคู่ หรือ ช่องคลี่  */
+li{
+      padding: 0.25rem;
+      margin: 0.25rem;
+      list-style: none;
+}
+/* ลูกคนแรกสุด */
+li:first-child{
+      background-color: red;
+}
+/* ลูกคนสุดท้าย */
+li:last-child{
+      background-color: orange;
+}
+/* ลูกคนที่ 3 นับลูกคนแรกสุดลงมา หรือ จากบนลงล่าง */
+li:nth-child(3){
+      background-color: green;
+}
+/* ลูกคนที่ 4 นับลูกคนแรกสุดลงมา หรือ จากบนลงล่าง */
+li:nth-child(4){
+      background-color: cyan;
+}
+/* ลูกคนที่ 3 นับจากคนสุดท้ายขึ้นมา  หรือ จากล่างขึ้นบน */
+li:nth-last-child(3){
+      background-color: yellow;
+}
+/* นับตามช่องที่ระบุ ว่าเริ่มช่องไหน เว้นกี่ช่องแล้วนับต่อ วนลูปจนถึงลูกคนสุดท้าย  "+7" =เริ่มจากลูกคนที่ 7  ,"5n" =นับใหม่ทุก 5 ช่อง  */
+li:nth-child(5n+7){
+      background-color: blue;
+}
+/* นับแค่ช่อง เลขคู่ */
+li:nth-child(even){
+      background-color: red;
+}
+/* นับแค่ช่อง เลขคลี่ */
+li:nth-child(odd){
+      background-color: greenyellow;
+}
+
+/* ///////////////////////////// Before & After Pseudo ใช้แทรกข้อความ หรือรูปภาพ หรือ objiect วางไว้ หน้า หลัง หรือ ทับซ้อน บน ล่าง  ใน แท็กหริอ คลาสเดียวกัน  ใข้ before or after*/
+/* ใส่ หรือ แทรก ข้อความ  ไว้หน้าแท็ก ที่มีคลาสนี้*/ 
+ .is-required::before{
+      content:"aa";
+      color: red;
+      padding-left: 2px;
+      
+ }
+/* ใส่ หรือ แทรก ข้อความ  ไว้หลังแท็ก ที่มีคลาสนี้*/ 
+ .is-required::after{
+      content:"*";
+      color: red;
+      padding-left: 2px;
+ }
+/* ใช้ข้อความวางทับรูปภาพ */
+.before_after{
+      background-color: #333;
+      color: #fff;
+      /* opacity: 0.; */
+     z-index: 100;
+ }
+ .son{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      background: none;
+      /* height: 60%; */
+      z-index: 500;
+ }
+ .son>h1{
+      color: #fff;
+      font-size: 5rem;
+      margin: 1rem;
+      z-index: 600;
+      
+ }
+ /* after ต้องมี z-index: -1 */
+.son::after{
+      content: "";
+      /* background-color: black; */
+           background: url('../lake-gf7818cd05_1920.png') no-repeat center center/cover; 
+      /*no- repeat center center/cover แสดงรูปภาพขนาดเต็ม พอดีจอ*/
+      position: absolute; 
+       top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 200;
+      opacity: 0.6;
+ } 
