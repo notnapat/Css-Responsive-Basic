@@ -1,0 +1,33 @@
+.header{
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+}
+.box{
+      background: white;
+      width: 100px;
+      height: 100px;
+      /* รูปแบบที่จะให้เปลี่ยนค่า */
+      transition-property:  background-color;
+      /* เวลาในการเปลี่ยนค่า */
+      transition-duration: 1s;
+      /* รูปแบบฟังชั่นของการเปลี่ยนแปลงค่า ease, ease-in , ease-out , ease-in-out */
+      transition-timing-function: ease-in-out;
+      /* เวลาที่จะเริ่มต้นเปลี่ยนค่า หรือ เมื่อเมาไปชี้ กล่องจะไม่เปลี่ยนค่าทันที แต่จะเรื่มทำงานตามเวลาที่ระบุ */
+      transition-delay: 0.7s;
+      /* ย่อข้างบน */
+      transition:  background-color 1s ease-in-out 0.7s;
+
+      /* ย่อเขียนใหม่ */
+      transition: background 1s , width 0.3s , border-radius 2s ease-in 0.5s ;
+      /* ถ้าทุกค่าใช้เวลาเปลี่่ยนพร้อมกัน */
+      transition:  all 3s ease-in-out 0.5s;
+}
+.box:hover{
+      /* ค่าที่จะเปลี่ยนเมื่อเมาส์ไปชี้ */
+      background-color: red;
+      width: 200px;
+      border-radius: 30%;
+}
