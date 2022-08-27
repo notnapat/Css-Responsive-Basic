@@ -1,0 +1,29 @@
+.box{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border: 2px solid green;
+      margin: 20px;
+
+      /* ย้าย  ปรับเปลี่ยน หมุน บีบ เอียง ขยาย กล่อง */
+
+      /* ย้ายตำแหน่ง ขึ้นลง ซ้ายขวา */
+      /* transform: translate(100px,100px); */
+
+      /* ยุบแนวนอนเข้ามา  */
+      transform: rotatey(70deg);
+      /* ยุบแนวตั้งเข้ามา */
+      transform:rotatex(60deg);
+      /* หมุนหน้ากล่อง */
+      transform: rotate(100deg);
+
+      /* เลขตัวแรก ขยายแนวนอน , ตัวที่สอง ขยายแนวตั้ง */
+      transform:  scale(2,1);
+
+      /* เอียงทางลึก หรือ บีบมุม แนวตั้ง */
+      transform:  skewx(30deg);
+      /* เอียงทางลึก หรือ บีบมุม แนวนอน */
+      transform:  skewY(50deg);
+      /* เอียง หรือ บีบมุม แบบเขียนรวม */
+      transform:  skew(20deg,10deg);
+}
