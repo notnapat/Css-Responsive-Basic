@@ -1,0 +1,73 @@
+body{
+      background-color: #333;
+}
+.box{
+      background-color: white;
+      width: 100px;
+      height: 100px;
+      
+      /* ตั้งชื่อ อนิเมชั่น หรือ ตัวแปล อนิเม */
+      animation-name:  animate1;
+      /* ระยะเวลาของ อนิเม จากเริ่มต้น ถึงสิ้นสุด */
+      animation-duration: 2s;
+      /* จำนวนรอบที่จะให้ อนิเม ทำงาน  ถ้า ใส่ค่า infinite จะเล่นวนไม่รู้จบ*/
+      animation-iteration-count: 3;
+      /* ถ้าไม่ใส่ จะเล่น หน้า หน้า หนา  , nomal เล่น แบบปกติ , alternate  เล่น  หน้า หลัง หน้า , alternate-reverse เล่น หลัง หน้า หลัง*/
+      animation-direction: alternate;
+      /* ease-in เริ่มต้นช้า หลังเร็ว , ease-out เริ่มต้นเร็ว หลังช้า */
+      animation-timing-function: ease;
+}
+
+@keyframes animate1{
+      /* เริ่มจาก */
+      from{
+            width: 100px;
+      }
+      /* ไปถึง หรือ สิ้นสุด */
+      to{
+            width: 400px;
+      }
+}
+
+.box2{
+      background-color: whitew;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      animation:  animate2 5s 2;
+}
+
+/* ืทำงาน 0%-100%  ภายใน 5s ต่อ1รอบ */
+@keyframes animate2{
+      0%{
+            top: 0;
+            left: 0;
+            transform:  rotate(0deg);
+            background-color: red;
+      }
+      25%{
+            top: 0;
+            left: 300px;
+            transform: rotate(45deg);
+            background-color: yellow;
+      }
+      50%{
+            top: 300px;
+            left: 300px;
+            transform: rotate(90deg);
+            background-color: greenyellow;
+      }
+      75%{
+            top: 300px;
+            left: 0;
+            transform: rotate(270deg);
+            background-color: orange;
+      }
+      100%{
+            top: 0;
+            left: 0;
+            transform: rotate(360deg);
+            background-color: red;
+      }
+      
+}
