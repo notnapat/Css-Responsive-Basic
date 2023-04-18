@@ -1,0 +1,139 @@
+
+/* https://www.youtube.com/watch?v=TUD1AWZVgQ8&t=313s */
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+.box {
+    background-color: rebeccapurple;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.box9 {
+    background-color: orange;
+
+    height: 100px;
+
+}
+
+.box10 {
+    background-color: blue;
+
+    /* height: 100px; */
+
+}
+
+
+.main {
+    /* flex-grow: 0.7; */
+    flex-grow: 1;
+}
+
+/* .sidebar {
+    width: 30%;
+    border-left: 1px solid black;
+} */
+
+
+
+@media (min-width: 300px) {}
+
+@media (max-width: 1400px) {}
+
+@media (width >=300px) {}
+
+/* กว้าง 300px ถึง 600px */
+@media (300px <=width <=600px) {
+    .box1 {
+        background-color: red;
+    }
+}
+
+
+/* กำหนดเป้าหมายให้เป็นแนวนอน และแนวตั้ง หรือ เปลี่ยนเป้าหมายเมื่อจอเป็นนอน หรือ ตั้ง */
+/* เปลี่ยนเมื่อจอเป็นแนวตั้ง */
+@media (orientation: portrait) {}
+
+/* เปลี่ยนเมื่อจอเป็นแนวนอน */
+@media (orientation: landscape) {}
+
+@media (orientation: landscape) and (max-width: 500px) {
+
+    .box2 {
+        background-color: red;
+    }
+}
+
+/* ตามอัตตราส่วนหน้าจอ เช่น 1 / 1, 3 / 2 , 16 / 9 */
+@media (min-aspect-ratio:16 / 9) {
+    .box3 {
+        background-color: red;
+    }
+}
+
+/* /////  อันนี้ยังทำไม่ได้ */
+/*  2 อย่าง @container And @custom-media  น่าจะเป็นเวอร์ชั่น ทดสอบ ในคลิปใช้ได้ แต่ลองใช้ดูเองยังใช้ไม่ได้ */
+.main,
+.sidebar {
+    container-type: inline-size;
+}
+
+@container (width >=400px) {
+    .box4 {
+        background-color: red;
+    }
+}
+
+@custom-media --small (width >=500px);
+
+@media (--small) {
+    .box9 {
+        background-color: red;
+    }
+}
+
+
+/* ///////////////// Grid */
+
+.grid1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-fit-fill {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+
+    /* auto-fit == น่าจะเป็นขยายเต็มขนาดกล่องบรรจุ */
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+
+    /* auto-fill == น่าจะเป็น ขนาดเท่าเดิม อยู่มุม หรือ ที่เดิม */
+    grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
+
+    /* แทน height ของ box */
+    grid-auto-rows: 200px;
+}
+
+.box-size-min-max-width {
+    background-color: green;
+    height:200px;
+
+    min-width:300px;
+    width: 50%;
+    max-width: 500px;
+    width: clamp(300px, 50%, 500px);
+
+    font-size: clamp(0.5rem, 5vw, 10rem);
+}
