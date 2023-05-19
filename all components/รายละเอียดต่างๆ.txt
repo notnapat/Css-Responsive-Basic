@@ -1,0 +1,5 @@
+flexbox && Grid && Grid Template Area
+flexbox น่าจะใช้กับ กล่อง หรือ layout ที่ ไม่ค่อยสมมาตรกัน
+grid    น่าจะใช้กับ กล่อง หรือ layout ที่ ยะห่าง หรือ จัด เรียง เท่า หรือ เหมือนกัน หรือ แตกต่างกันนิดหน่อย
+้
+ุถ้าจัด main layout > header content footer >> ใช้ grid template area
